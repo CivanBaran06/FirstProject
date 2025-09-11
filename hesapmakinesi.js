@@ -1,27 +1,35 @@
-let display = document.getElementById('display');
+let display;
 let currentInput = "";
 
-// Butona basıldığında
+// Sayfa tamamen yüklendikten sonra çalışacak
+window.onload = function() {
+    display = document.getElementById('display');
+};
+
+// Butona basıldığında çalışacak fonksiyon
 function press(value) {
-  currentInput += value;
-  display.value = currentInput;
+    if (!display) return; // display null ise hata verme
+    currentInput += value;
+    display.value = currentInput;
 }
 
 // C tuşu
 function clearDisplay() {
-  currentInput = "";
-  display.value = "";
+    if (!display) return;
+    currentInput = "";
+    display.value = "";
 }
 
 // = tuşu
 function calculate() {
-  try {
-    if (currentInput.trim() === "") return;
-    let result = eval(currentInput);
-    display.value = result;
-    currentInput = result.toString();
-  } catch {
-    display.value = "Hata";
-    currentInput = "";
-  }
+    if (!display) return;
+    try {
+        if (currentInput.trim() === "") return;
+        let result = eval(currentInput);
+        display.value = result;
+        currentInput = result.toString();
+    } catch {
+        display.value = "Hata";
+        currentInput = "";
+    }
 }
