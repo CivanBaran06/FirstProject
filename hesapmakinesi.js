@@ -6,21 +6,18 @@ window.onload = function() {
     display = document.getElementById('display');
 };
 
-// Butona basıldığında çalışacak fonksiyon
 function press(value) {
-    if (!display) return; // display null ise hata verme
+    if (!display) return;
     currentInput += value;
     display.value = currentInput;
 }
 
-// C tuşu
 function clearDisplay() {
     if (!display) return;
     currentInput = "";
     display.value = "";
 }
 
-// = tuşu
 function calculate() {
     if (!display) return;
     try {
