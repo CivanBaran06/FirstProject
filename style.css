@@ -3,46 +3,55 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f4f4f9;
+  background: #f3f3f3;
   font-family: Arial, sans-serif;
 }
 
 .calculator {
-  background: #fff;
+  background: #222;
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  width: 250px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
 }
 
-.display {
+#display {
   width: 100%;
   height: 50px;
   margin-bottom: 15px;
+  font-size: 24px;
   text-align: right;
-  font-size: 1.5rem;
   padding: 10px;
   border: none;
-  border-radius: 10px;
-  background: #eee;
+  border-radius: 8px;
+  background: #fff;
 }
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 70px);
   gap: 10px;
 }
 
 button {
-  padding: 15px;
-  font-size: 1.2rem;
+  height: 60px;
+  font-size: 20px;
   border: none;
-  border-radius: 10px;
-  background: #e0e0e0;
+  border-radius: 8px;
   cursor: pointer;
+  background: #444;
+  color: #fff;
   transition: 0.2s;
 }
 
 button:hover {
-  background: #d4d4d4;
+  background: #666;
+}
+
+button.clear {
+  grid-column: span 4;
+  background: #e63946;
+}
+
+button.clear:hover {
+  background: #c1121f;
 }
